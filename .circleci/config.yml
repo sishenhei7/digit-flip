@@ -38,7 +38,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run commands!
-      - run: ssh -T git@github.com
+      - run: ls -a
       - run: yarn build:doc
       - run: git remote -v
       - run: git add -A
