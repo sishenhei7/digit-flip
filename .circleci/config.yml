@@ -39,8 +39,8 @@ jobs:
 
       # run commands!
       - run: yarn build:doc
-      - run: git add .
-      - run: git commit
-      - run: git push origin master
+      - run: git add -A
+      - run: git commit -m 'deploy'
+      - run: git push -f git@github.com:sishenhei7/digit-flip.git master:master
 
 
