@@ -38,6 +38,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run commands!
-      - run: sh deploy-circleci.sh
+      - run: yarn build:doc
+      - run: git add .
+      - run: git commit
+      - run: git push origin master
 
 
