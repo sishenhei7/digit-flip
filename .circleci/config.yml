@@ -17,9 +17,9 @@ jobs:
     working_directory: ~/repo
 
     steps:
-      - add_ssh_keys:
-          fingerprints:
-          - "49:c0:32:6f:eb:5c:fd:1e:91:f7:81:ee:04:79:d6:35"
+      # - add_ssh_keys:
+      #     fingerprints:
+      #     - "49:c0:32:6f:eb:5c:fd:1e:91:f7:81:ee:04:79:d6:35"
 
       - checkout
 
@@ -39,6 +39,7 @@ jobs:
 
       # run commands!
       - run: yarn build:doc
+      - run: git remote -v
       - run: git add -A
       - run: git commit -m 'deploy'
       - run: git push -f git@github.com:sishenhei7/digit-flip.git master:master
