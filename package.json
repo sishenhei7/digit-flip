@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
-    "build:doc": "vue-cli-service build ./demo/main.js --dest docs --mode development"
+    "build:doc": "vue-cli-service build ./demo/main.js --dest docs --mode production"
   },
   "dependencies": {
     "core-js": "^2.6.5",
