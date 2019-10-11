@@ -38,12 +38,9 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run commands!
-      - run: git checkout master
       - run: yarn build:doc
       - run: git add .
-      - run: git config --global user.email "xxxxx@example.com"
-      - run: git config --global user.name "sishenhei7"
       - run: git commit -m 'deploy'
-      - run: git push -f git@github.com:sishenhei7/digit-flip.git master:master
+      - run: git push git@github.com:sishenhei7/digit-flip.git master:gh-pages
 
 
