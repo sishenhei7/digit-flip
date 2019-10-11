@@ -5,6 +5,10 @@
 version: 2
 jobs:
   build:
+    branches:
+      only:
+          - master
+
     docker:
       # specify the version you desire here
       - image: circleci/node:latest
@@ -33,13 +37,14 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      - run: sh deploy-circleci.sh
-
-workflows:
-  version: 2
-  build-deploy:
-    jobs:
-      - build:
-          filters:
-            branches:
-              only: master
+      - deploy:
+          name: Deploy
+          command: |
+              yarn build:doc
+              cd docs
+              git init
+              git config --global user.email "you@example.com"
+              git config --global user.name "sishenhei7"
+              git add .
+              git commit -m 'deploy: build docs[ci skip]'
+              git push -f git@github.com:sishenhei7/digit-flip.git  master:gh-pages
