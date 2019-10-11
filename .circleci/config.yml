@@ -38,6 +38,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run commands!
+      - run: git checkout master
       - run: yarn build:doc
       - run: git add -A
       - run: git config --global user.email "xxxxx@example.com"
