@@ -38,11 +38,6 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run commands!
-      - run: yarn build:doc
-      - run: git add .
-      - run: git config --global user.email "xxxxx@example.com"
-      - run: git config --global user.name "sishenhei7"
-      - run: git commit -m 'deploy'
-      - run: git push git@github.com:sishenhei7/digit-flip.git master:gh-pages
+      - run: sh deploy-circleci.sh
 
 
