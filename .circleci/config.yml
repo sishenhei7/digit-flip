@@ -16,10 +16,6 @@ jobs:
 
     # working_directory: ~/repo
 
-    filters:
-      branches:
-        only: master
-
     steps:
       - checkout
 
@@ -38,3 +34,12 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run: sh deploy-circleci.sh
+
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: master
