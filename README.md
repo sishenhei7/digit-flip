@@ -32,6 +32,6 @@ You can use YmDrawerHorizontal as a vue component anywhere like this:
 <digit-flip :value="num" />
 ```
 
-For more usage, please look at [demo-source-code](https://github.com/sishenhei7/digit-flip/tree/master/demo)
+For more usage, please check [demo-source-code](https://github.com/sishenhei7/digit-flip/tree/master/demo)
 
 
