@@ -12,13 +12,13 @@
 
 ### install
 
-To begin with, just install ym-drawer:
+To begin with, just install digit-flip:
 
 ```
 npm i digit-flip -s
 ```
 
-then，install it in ```main.js```:
+Then，register it in ```main.js```:
 
 ```
 Vue.use(DigitFlip)
@@ -26,7 +26,7 @@ Vue.use(DigitFlip)
 
 ### examples
 
-You can use YmDrawerHorizontal as a vue component anywhere like this:
+You can use DigitFlip as a vue component anywhere like this:
 
 ```
 <digit-flip :value="num" />
